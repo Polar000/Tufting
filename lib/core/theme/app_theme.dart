@@ -5,7 +5,7 @@ import 'app_colors.dart';
 class AppTheme {
   static ThemeData get lightTheme {
     final baseText = GoogleFonts.outfitTextTheme();
-    final displayFont = GoogleFonts.playfairDisplayTheme();
+    final displayFont = GoogleFonts.playfairDisplayTextTheme();
 
     return ThemeData(
       useMaterial3: true,
@@ -26,7 +26,7 @@ class AppTheme {
         error: AppColors.error,
         onError: Colors.white,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.cardLight,
         elevation: 0.5,
         shadowColor: AppColors.charcoal.withValues(alpha: 0.08),
@@ -145,7 +145,7 @@ class AppTheme {
 
   static ThemeData get darkTheme {
     final baseText = GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme);
-    final displayFont = GoogleFonts.playfairDisplayTheme(ThemeData.dark().textTheme);
+    final displayFont = GoogleFonts.playfairDisplayTextTheme(ThemeData.dark().textTheme);
 
     return ThemeData(
       useMaterial3: true,
@@ -166,7 +166,7 @@ class AppTheme {
         error: AppColors.error,
         onError: Colors.white,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.darkCard,
         elevation: 0,
         shape: RoundedRectangleBorder(
