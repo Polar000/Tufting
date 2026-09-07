@@ -4,8 +4,7 @@ import 'app_colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
-    final baseText = GoogleFonts.outfitTextTheme();
-    final displayFont = GoogleFonts.playfairDisplayTextTheme();
+    final textTheme = GoogleFonts.plusJakartaSansTextTheme(ThemeData.light().textTheme);
 
     return ThemeData(
       useMaterial3: true,
@@ -38,11 +37,16 @@ class AppTheme {
           ),
         ),
       ),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: AppColors.warmBeige,
         foregroundColor: AppColors.charcoal,
         elevation: 0,
         centerTitle: true,
+        titleTextStyle: GoogleFonts.plusJakartaSans(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: AppColors.charcoal,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -53,9 +57,9 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: const TextStyle(
+          textStyle: GoogleFonts.plusJakartaSans(
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
             letterSpacing: 0.2,
           ),
         ),
@@ -68,9 +72,9 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: const TextStyle(
+          textStyle: GoogleFonts.plusJakartaSans(
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
@@ -78,7 +82,7 @@ class AppTheme {
         style: TextButton.styleFrom(
           foregroundColor: AppColors.terracotta,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          textStyle: const TextStyle(
+          textStyle: GoogleFonts.plusJakartaSans(
             fontSize: 15,
             fontWeight: FontWeight.w600,
           ),
@@ -104,7 +108,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(color: AppColors.error, width: 1.5),
         ),
-        hintStyle: TextStyle(
+        hintStyle: GoogleFonts.plusJakartaSans(
           color: AppColors.warmGray.withValues(alpha: 0.7),
           fontSize: 15,
         ),
@@ -116,36 +120,41 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
-      textTheme: baseText.copyWith(
-        displayLarge: displayFont.displayLarge?.copyWith(
+      textTheme: textTheme.copyWith(
+        displayLarge: GoogleFonts.plusJakartaSans(
           color: AppColors.charcoal,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w800,
+          fontSize: 32,
         ),
-        displayMedium: displayFont.displayMedium?.copyWith(
+        displayMedium: GoogleFonts.plusJakartaSans(
           color: AppColors.charcoal,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w800,
+          fontSize: 26,
         ),
-        titleLarge: displayFont.titleLarge?.copyWith(
+        titleLarge: GoogleFonts.plusJakartaSans(
           color: AppColors.charcoal,
           fontWeight: FontWeight.w700,
+          fontSize: 20,
         ),
-        titleMedium: baseText.titleMedium?.copyWith(
+        titleMedium: GoogleFonts.plusJakartaSans(
           color: AppColors.charcoal,
           fontWeight: FontWeight.w600,
+          fontSize: 16,
         ),
-        bodyLarge: baseText.bodyLarge?.copyWith(
+        bodyLarge: GoogleFonts.plusJakartaSans(
           color: AppColors.charcoal,
+          fontSize: 15,
         ),
-        bodyMedium: baseText.bodyMedium?.copyWith(
+        bodyMedium: GoogleFonts.plusJakartaSans(
           color: AppColors.warmGray,
+          fontSize: 14,
         ),
       ),
     );
   }
 
   static ThemeData get darkTheme {
-    final baseText = GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme);
-    final displayFont = GoogleFonts.playfairDisplayTextTheme(ThemeData.dark().textTheme);
+    final textTheme = GoogleFonts.plusJakartaSansTextTheme(ThemeData.dark().textTheme);
 
     return ThemeData(
       useMaterial3: true,
@@ -177,11 +186,16 @@ class AppTheme {
           ),
         ),
       ),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: AppColors.darkBackground,
-        foregroundColor: Color(0xFFEFEBE6),
+        foregroundColor: const Color(0xFFEFEBE6),
         elevation: 0,
         centerTitle: true,
+        titleTextStyle: GoogleFonts.plusJakartaSans(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: const Color(0xFFEFEBE6),
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -192,7 +206,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: const TextStyle(
+          textStyle: GoogleFonts.plusJakartaSans(
             fontSize: 16,
             fontWeight: FontWeight.w700,
           ),
@@ -206,9 +220,9 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: const TextStyle(
+          textStyle: GoogleFonts.plusJakartaSans(
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
@@ -228,33 +242,39 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(color: AppColors.terracottaDark, width: 2),
         ),
-        hintStyle: const TextStyle(
-          color: Color(0xFF9E9890),
+        hintStyle: GoogleFonts.plusJakartaSans(
+          color: const Color(0xFF9E9890),
           fontSize: 15,
         ),
       ),
-      textTheme: baseText.copyWith(
-        displayLarge: displayFont.displayLarge?.copyWith(
+      textTheme: textTheme.copyWith(
+        displayLarge: GoogleFonts.plusJakartaSans(
           color: const Color(0xFFEFEBE6),
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w800,
+          fontSize: 32,
         ),
-        displayMedium: displayFont.displayMedium?.copyWith(
+        displayMedium: GoogleFonts.plusJakartaSans(
           color: const Color(0xFFEFEBE6),
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w800,
+          fontSize: 26,
         ),
-        titleLarge: displayFont.titleLarge?.copyWith(
+        titleLarge: GoogleFonts.plusJakartaSans(
           color: const Color(0xFFEFEBE6),
           fontWeight: FontWeight.w700,
+          fontSize: 20,
         ),
-        titleMedium: baseText.titleMedium?.copyWith(
+        titleMedium: GoogleFonts.plusJakartaSans(
           color: const Color(0xFFEFEBE6),
           fontWeight: FontWeight.w600,
+          fontSize: 16,
         ),
-        bodyLarge: baseText.bodyLarge?.copyWith(
+        bodyLarge: GoogleFonts.plusJakartaSans(
           color: const Color(0xFFEFEBE6),
+          fontSize: 15,
         ),
-        bodyMedium: baseText.bodyMedium?.copyWith(
+        bodyMedium: GoogleFonts.plusJakartaSans(
           color: const Color(0xFFB5AE9E),
+          fontSize: 14,
         ),
       ),
     );
