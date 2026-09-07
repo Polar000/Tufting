@@ -1,0 +1,201 @@
+import '../models/app_models.dart';
+
+class MockData {
+  static final List<InspirationRugModel> inspirationRugs = [
+    const InspirationRugModel(
+      id: 'insp_1',
+      title: 'Logo Personalizado Studio',
+      category: 'Logos',
+      sizeDescription: '80 x 80 cm',
+      estimatedPrice: 850.00,
+      imageUrl: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800',
+      description: 'Alfombra con bordes tallados a mano y acabado de lana alta densidad para recepción de estudio.',
+      materialInfo: '100% Lana Neozelandesa, Fieltro Antideslizante',
+      estimatedDays: 10,
+    ),
+    const InspirationRugModel(
+      id: 'insp_2',
+      title: 'Composición Abstracta M6',
+      category: 'Arte',
+      sizeDescription: '120 x 160 cm',
+      estimatedPrice: 1450.00,
+      imageUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800',
+      description: 'Obra de arte textil con técnica de niveles en relieve y contraste de colores tierra.',
+      materialInfo: 'Mezcla Lana Premium & Acrílico Suave',
+      estimatedDays: 14,
+    ),
+    const InspirationRugModel(
+      id: 'insp_3',
+      title: 'Monstruo Minimal Gamer',
+      category: 'Gaming',
+      sizeDescription: '90 x 90 cm',
+      estimatedPrice: 780.00,
+      imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800',
+      description: 'Alfombra vibrante con contorno irregular para setup de gaming.',
+      materialInfo: 'Lana de alta resistencia, Dorso reforzado',
+      estimatedDays: 8,
+    ),
+    const InspirationRugModel(
+      id: 'insp_4',
+      title: 'Retrato Fiel Mascotas',
+      category: 'Animales',
+      sizeDescription: '70 x 70 cm',
+      estimatedPrice: 690.00,
+      imageUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=800',
+      description: 'Alfombra circular tufted con silueta suave y detalles nítidos de bordado.',
+      materialInfo: 'Lana Soft Touch, Antideslizante',
+      estimatedDays: 7,
+    ),
+    const InspirationRugModel(
+      id: 'insp_5',
+      title: 'Silueta Anime Neon',
+      category: 'Anime',
+      sizeDescription: '100 x 120 cm',
+      estimatedPrice: 1100.00,
+      imageUrl: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=800',
+      description: 'Personaje anime icónico tallado con tijeras tufting para profundidad 3D.',
+      materialInfo: 'Lana 100% Acrílica Tuft',
+      estimatedDays: 12,
+    ),
+    const InspirationRugModel(
+      id: 'insp_6',
+      title: 'Formas Orgánicas Beige',
+      category: 'Minimalista',
+      sizeDescription: '150 x 200 cm',
+      estimatedPrice: 1850.00,
+      imageUrl: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800',
+      description: 'Pieza de gran formato para sala, tonalidades beige y crema con textura afelpada.',
+      materialInfo: 'Lana Extra Densidad, Acabado Artesanal',
+      estimatedDays: 18,
+    ),
+    const InspirationRugModel(
+      id: 'insp_7',
+      title: 'Monstera Leaf Tapestry',
+      category: 'Decoración',
+      sizeDescription: '100 x 100 cm',
+      estimatedPrice: 920.00,
+      imageUrl: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800',
+      description: 'Diseño botánico con variaciones de verde oliva y relieve natural.',
+      materialInfo: '100% Lana Natural',
+      estimatedDays: 9,
+    ),
+  ];
+
+  static final List<RugExtraOption> availableExtras = [
+    const RugExtraOption(
+      id: 'ex_1',
+      name: 'Bordes especial tallados',
+      description: 'Biselado manual con tijeras de tufting para efecto 3D profundo.',
+      extraPrice: 120.0,
+    ),
+    const RugExtraOption(
+      id: 'ex_2',
+      name: 'Efecto Relieve Multi-altura',
+      description: 'Diferentes alturas de lana para resaltar texturas al tacto.',
+      extraPrice: 150.0,
+    ),
+    const RugExtraOption(
+      id: 'ex_3',
+      name: 'Empaque Premium LanaTuft',
+      description: 'Caja protectora de madera/cartón reciclado artesanal con funda de lino.',
+      extraPrice: 85.0,
+    ),
+    const RugExtraOption(
+      id: 'ex_4',
+      name: 'Certificado de Pieza Única',
+      description: 'Certificado físico firmado por el artesano creador con sello de lacre.',
+      extraPrice: 50.0,
+    ),
+  ];
+
+  static List<OrderModel> mockOrders = [
+    OrderModel(
+      id: 'ORD-9421',
+      date: DateTime.now().subtract(const Duration(days: 4)),
+      title: 'Alfombra Mascotas - Corgi',
+      imageUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=800',
+      requestDetails: const CustomRugRequestModel(
+        prompt: 'Silueta de perrito Corgi sonriendo con fondo crema',
+        widthCm: 75,
+        heightCm: 75,
+        shape: 'Circular',
+        woolType: 'Lana premium',
+        density: 'Alta',
+        backing: 'Antideslizante',
+        finish: 'Premium',
+      ),
+      status: OrderStatus.enProduccion,
+      totalPrice: 825.00,
+      depositAmount: 412.50,
+      remainingBalance: 412.50,
+      isDepositPaid: true,
+      adminNote: 'Lana teñida y bastidor montado. En proceso de tejido principal.',
+    ),
+    OrderModel(
+      id: 'ORD-8102',
+      date: DateTime.now().subtract(const Duration(days: 12)),
+      title: 'Logo Tuft Studio',
+      imageUrl: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800',
+      requestDetails: const CustomRugRequestModel(
+        prompt: 'Logotipo de nuestra marca con tipografía dorada',
+        widthCm: 100,
+        heightCm: 100,
+        shape: 'Cuadrada',
+        woolType: 'Lana estándar',
+        density: 'Estándar',
+      ),
+      status: OrderStatus.entregada,
+      totalPrice: 950.00,
+      depositAmount: 475.00,
+      remainingBalance: 0.00,
+      isDepositPaid: true,
+      adminNote: 'Entregado con éxito al cliente.',
+    ),
+  ];
+
+  static List<ChatMessageModel> initialChatMessages = [
+    ChatMessageModel(
+      id: 'm1',
+      sender: 'company',
+      text: '¡Hola! Bienvenido a LanaTuft Artesanal. 👋 ¿En qué podemos ayudarte con tu idea de alfombra hoy?',
+      timestamp: DateTime.now().subtract(const Duration(hours: 3)),
+    ),
+    ChatMessageModel(
+      id: 'm2',
+      sender: 'user',
+      text: 'Hola, quisiera saber cuánto tarda aproximadamente la producción de un pedido personalizado.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 2, minutes: 40)),
+    ),
+    ChatMessageModel(
+      id: 'm3',
+      sender: 'company',
+      text: 'Normalmente el proceso artesanal toma entre 7 y 12 días laborables desde la aprobación del diseño y anticipo.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 2, minutes: 35)),
+    ),
+  ];
+
+  static List<NotificationModel> initialNotifications = [
+    NotificationModel(
+      id: 'n1',
+      title: '¡Diseño aprobado!',
+      body: 'Tu solicitud #ORD-9421 ha sido revisada y aprobada por nuestros maestros tejedores.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 5)),
+      orderId: 'ORD-9421',
+    ),
+    NotificationModel(
+      id: 'n2',
+      title: 'Pago de anticipo recibido',
+      body: 'Recibimos tu anticipo de Q412.50. ¡Tu alfombra ha entrado a producción!',
+      timestamp: DateTime.now().subtract(const Duration(hours: 4)),
+      isRead: true,
+      orderId: 'ORD-9421',
+    ),
+    NotificationModel(
+      id: 'n3',
+      title: 'Nuevos diseños de inspiración',
+      body: 'Hemos añadido 5 nuevos trabajos en la categoría Minimalista y Gaming. ¡Explóralos!',
+      timestamp: DateTime.now().subtract(const Duration(days: 1)),
+      isRead: true,
+    ),
+  ];
+}
