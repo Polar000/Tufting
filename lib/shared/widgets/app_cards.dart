@@ -28,19 +28,20 @@ class AppCard extends StatelessWidget {
       child: child,
     );
 
+    final borderSide = border ??
+        cardTheme.shape?.let((s) {
+          if (s is RoundedRectangleBorder) return s.side;
+          return BorderSide.none;
+        }) ??
+        BorderSide.none;
+
     return Material(
       color: color ?? cardTheme.color,
-      borderRadius: BorderRadius.circular(20),
       clipBehavior: Clip.antiAlias,
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-        side: border ??
-            cardTheme.shape?.let((s) {
-              if (s is RoundedRectangleBorder) return s.side;
-              return BorderSide.none;
-            }) ??
-            BorderSide.none,
+        side: borderSide,
       ),
       child: onTap != null
           ? InkWell(
